@@ -1,32 +1,63 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.ejemplo_clase7;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 /**
  *
  * @author pablo
  */
 public class Ejemplo_clase7 {
 
-    // =========================
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("---- MENÚ ----");
+            System.out.println("1. Manejo de archivos");
+            System.out.println("2. Métodos recursivos");
+            System.out.println("3. Salir");
+            int opcion = leerEntero(sc, "Selecciona una opción: ");
+
+            switch (opcion) {
+                case 1:
+                    manejoDeArchivos(sc);
+                    break;
+                case 2:
+                    metodosRecursivos(sc);
+                    break;
+                case 3:
+                    System.out.println("¡Hasta luego!");
+                    sc.close();
+                    return;
+                default:
+                    System.out.println("Opción no válida.\n");
+            }
+        }
+    }
+
+    // --------------------
     // FIBONACCI
-    // =========================
+    // --------------------
     public static int fibonacci(int n) {
-        if (n == 0) return 0;
-        if (n == 1) return 1;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    // =========================
+    // --------------------
     // ACKERMANN
-    // =========================
+    // --------------------
     public static int ackermann(int m, int n) {
         if (m == 0) {
             return n + 1;
@@ -37,9 +68,9 @@ public class Ejemplo_clase7 {
         }
     }
 
-    // =========================
+    // ---------------------------
     // leer entero con validación
-    // =========================
+    // ---------------------------
     private static int leerEntero(Scanner sc, String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -54,15 +85,15 @@ public class Ejemplo_clase7 {
         }
     }
 
-    // =========================
+    // --------------------
     // Manejo de archivos
-    // =========================
+    // --------------------
     private static void manejoDeArchivos(Scanner sc) {
         System.out.print("Ingresa el nombre del archivo (ejemplo: datos.txt): ");
         String nombreArchivo = sc.nextLine();
         File archivo = new File(nombreArchivo);
 
-        System.out.println("== MANEJO DE ARCHIVOS ==");
+        System.out.println("-- MANEJO DE ARCHIVOS --");
         try {
             System.out.println("Creando objeto File con nombre: " + nombreArchivo);
             System.out.println("Verificando si el archivo existe...");
@@ -105,15 +136,15 @@ public class Ejemplo_clase7 {
             System.out.println("ERROR: Ocurrió un error durante el manejo de archivos.");
             e.printStackTrace();
         }
-        System.out.println("=========================\n");
+        System.out.println("------------------------\n");
     }
 
-    // =========================
+    // --------------------
     // Métodos recursivos
-    // =========================
+    // --------------------
     private static void metodosRecursivos(Scanner sc) {
         while (true) {
-            System.out.println("== MÉTODOS RECURSIVOS ==");
+            System.out.println("-- MÉTODOS RECURSIVOS --");
             System.out.println("1) Fibonacci");
             System.out.println("2) Ackermann");
             System.out.println("3) Volver al menú principal");
@@ -154,30 +185,5 @@ public class Ejemplo_clase7 {
             }
         }
     }
-    
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println("==== MENÚ ====");
-            System.out.println("1. Manejo de archivos");
-            System.out.println("2. Métodos recursivos");
-            System.out.println("3. Salir");
-            int opcion = leerEntero(sc, "Selecciona una opción: ");
 
-            switch (opcion) {
-                case 1:
-                    manejoDeArchivos(sc);
-                    break;
-                case 2:
-                    metodosRecursivos(sc);
-                    break;
-                case 3:
-                    System.out.println("¡Hasta luego!");
-                    sc.close();
-                    return;
-                default:
-                    System.out.println("Opción no válida.\n");
-            }
-        }
-    }
 }
