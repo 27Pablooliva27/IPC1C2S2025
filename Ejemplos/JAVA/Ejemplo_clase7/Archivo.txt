@@ -1,0 +1,3 @@
+Primera línea escrita con FileWriter.
+Segunda línea.
+Tercera línea.
