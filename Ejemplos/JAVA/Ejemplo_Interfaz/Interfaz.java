@@ -1,17 +1,8 @@
-/*
- * Ventana de la calculadora simple.
- * Permite sumar, restar, multiplicar y dividir dos números,
- * además de limpiar los campos o volver a la ventana de inicio.
- */
 package Interfaz;
-
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Clase Interfaz que representa la ventana de la calculadora.
- * Extiende de JFrame para construir la interfaz gráfica.
- * 
  * @author pablo
  */
 public class Interfaz extends JFrame {

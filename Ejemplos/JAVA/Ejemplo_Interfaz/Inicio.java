@@ -1,14 +1,9 @@
-/*
- * Clase principal de inicio que muestra una ventana de bienvenida
- * con dos botones: uno para abrir la calculadora y otro para salir.
- */
 package Interfaz;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Ventana inicial de la aplicación.
  * @author pablo
  */
 public class Inicio extends JFrame {
